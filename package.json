@@ -1,0 +1,22 @@
+{
+  "name": "taco-app",
+  "version": "1.0.0",
+  "description": "## Prompt",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altonelli/mean-lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altonelli/mean-lab/issues"
+  },
+  "homepage": "https://github.com/altonelli/mean-lab#readme"
+}

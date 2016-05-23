@@ -1,3 +1,5 @@
+console.log("in app.js");
+
 angular
   .module('taco', []);
 
@@ -5,40 +7,28 @@ angular
   .module('taco')
   .controller("TacosController", TacosController);
 
-  function TacosController(){
+  TacosController.$inject = ['$http'];
+
+  function TacosController( $http ){
+
+    console.log("in tacos controller");
     vm = this;
+
+    vm.tacos = [];
 
     vm.newTaco = {
       meat: "beef",
       tortilla: "corn"
     };
 
-    vm.tacos = [
-      {
-        meat: "fish",
-        tortilla: "flour"
-      },
-      {
-        meat: "chicken",
-        tortilla: "corn"
-      },
-      {
-        meat: "carnitas",
-        tortilla: "flour"
-      }
-    ];
+    $http({
+      method: "GET",
+      url: '/api/tacos',
+    }).then(function successCallback(res){
+      console.log("RES>DATA",res.data);
+      vm.tacos = res.data;
+    }, function errorCallback(res){
+      console.log(res);
+    });
 
-    vm.submit = function(){
-      console.log("HIT!");
-      var taco = clone(vm.newTaco);
-      vm.tacos.push(taco);
-    };
   }
-
-function clone(obj){
-  var clone = {};
-  for (var key in obj) {
-    clone[key] = obj[key];
-  }
-  return clone;
-}

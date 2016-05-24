@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.js"></script>
+
+
 
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/ProductsIndexController.js"></script>
     <script src="/scripts/controllers/ProductsShowController.js"></script>
+    <script src="templates/product.html"></script>
+    <script src="templates/products-show.html"></script>
 
   </head>
   <body>
@@ -65,7 +70,8 @@
 
       <div class="container" ng-controller="ProductsIndexController as productsIndexCtrl">
       <div ng-repeat="name in productsIndexCtrl">
-        Food Name: {{name}}
+        <strong>Food Name: </strong> {{name}}
+        <strong>Food Type: </strong> {{type}}
       </div>
     </div>
 
@@ -77,7 +83,8 @@
       </div>
     </div>
 
-  </div>
+    </div>
+
 
   </body>
 

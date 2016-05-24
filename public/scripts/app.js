@@ -11,12 +11,12 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'templates/products',
+      templateUrl: '/templates/product.html',
       controllerAs: 'productsIndexCtrl',
       controller: 'ProductsIndexController'
     })
     .when('/products/:id', {
-      templateUrl: 'templates/products-show',
+      templateUrl: '/templates/products-show.html',
       controllerAs: 'productsShowCtrl',
       controller: 'ProductsShowController'
     });

@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // need to add this so that we can accept request payloads
 app.use(bodyParser.json());
 
-
+var controllers = require("./controllers");
 
 // ALL OTHER ROUTES (ANGULAR HANDLES)
 // redirect all other paths to index
@@ -20,6 +20,10 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/api', controllers.api.index);
+app.get('/api/products', controllers.products.index);
+app.get('/api/products/:productId',controllers.products.show);
+app.post('/api/products', controllers.products.create);
 /**********
  * SERVER *
  **********/

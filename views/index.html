@@ -17,16 +17,55 @@
 
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/ProductsIndexController.js"></script>
+    <script src="/scripts/controllers/ProductsShowController.js"></script>
 
   </head>
   <body>
     <div class="jumbotron">
       <div class="container">
-        <h1>Shopping App</h1>
+        <h1>Shopping List</h1>
       </div>
     </div>
 
-    <div ng-view></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          <form class="form-horizontal" ng-submit="productsIndexCtrl.createProduct()">
+            <fieldset>
+
+              <!-- Form Name -->
+              <legend>Add New Item</legend>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Product Name</label>
+                <div class="col-md-4">
+                <input id="name" ng-model="productsIndexCtrl.newProduct.name" type="text" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Type</label>
+                <div class="col-md-4">
+                <input ng-model="productsIndexCtrl.newProduct.type" type="text" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Save Item</label>
+                <div class="col-md-4">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 
 </html>

@@ -41,7 +41,7 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
- app.get('/api', controllers.api.index);
+ // app.get('/api', controllers.api.index);
 
  app.get('/api/groceriesController', controllers.groceriesController.index);
  app.post('/api/groceriesController', controllers.groceriesController.create);

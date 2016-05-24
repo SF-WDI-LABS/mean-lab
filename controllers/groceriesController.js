@@ -40,26 +40,26 @@ function show(req, res) {
 //   });
 // }
 
-function update(req, res) {
-  console.log('updating with data', req.body);
-  db.Grocery.findById(req.params.groceryId, function(err, foundGrocery) {
-    if(err) { console.log('grocerysController.update error', err); }
-    foundGrocery.name = req.body.name;
-    foundGrocery.type = req.body.type;
-    foundGrocery.save(function(err, savedGrocery) {
-      if(err) { console.log('saving altered grocery failed'); }
-      res.json(savedGrocery);
-    });
-  });
+// function update(req, res) {
+//   console.log('updating with data', req.body);
+//   db.Grocery.findById(req.params.groceryId, function(err, foundGrocery) {
+//     if(err) { console.log('grocerysController.update error', err); }
+//     foundGrocery.name = req.body.name;
+//     foundGrocery.type = req.body.type;
+//     foundGrocery.save(function(err, savedGrocery) {
+//       if(err) { console.log('saving altered grocery failed'); }
+//       res.json(savedGrocery);
+//     });
+//   });
+//
+// }
 
-}
 
 
-export public methods here
 module.exports = {
   index: index,
-  create: create,
-  show: show,
-  destroy: destroy,
-  update: update
+  // create: create,
+  // show: show,
+  // destroy: destroy,
+  // update: update
 };

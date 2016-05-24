@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // app.engine('html', ejs.renderFile);
 // app.set('view engine', 'html');
 
-// var controllers = require('./controllers');
+var controllers = require('./controllers');
 
 
 /**********
@@ -43,7 +43,7 @@ app.get('/', function homepage (req, res) {
 
  // app.get('/api', controllers.api.index);
 
- // app.get('/api/groceriesController', controllers.groceriesController.index);
+ app.get('/groceries', controllers.groceries.index);
  // app.post('/api/groceriesController', controllers.groceriesController.create);
  // app.delete('/api/groceriesController/:Id', controllers.groceriesController.destroy);
  // app.put('/api/groceriesController/:Id', controllers.groceriesController.update);

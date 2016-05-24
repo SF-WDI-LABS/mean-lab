@@ -24,6 +24,8 @@ app.get('/api', controllers.api.index);
 app.get('/api/products', controllers.products.index);
 app.get('/api/products/:productId',controllers.products.show);
 app.post('/api/products', controllers.products.create);
+app.put('/api/products/:productId', controllers.products.update);
+app.delete('/api/products/:productId', controllers.products.destroy);
 /**********
  * SERVER *
  **********/

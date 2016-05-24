@@ -7,7 +7,7 @@ function ProductsIndexController ($http) {
   var vm = this;
   vm.newProduct = {};
   vm.newProduct = {
-    name: 'Milk',
+    name: 'milk',
     type: 'dairy'
   };
 

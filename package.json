@@ -1,0 +1,24 @@
+{
+  "name": "mean-lab",
+  "version": "1.0.0",
+  "description": "## Prompt",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hermchan/mean-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hermchan/mean-lab/issues"
+  },
+  "homepage": "https://github.com/hermchan/mean-lab#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.19"
+  }
+}

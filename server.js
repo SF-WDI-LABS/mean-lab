@@ -15,6 +15,9 @@ app.engine('html', ejs.renderFile);
 var controllers = require('./controllers');
 
 app.get('/api/tacos', controllers.tacos.index);
+app.post('/api/tacos', controllers.tacos.create);
+app.put('/api/tacos/:tacoId', controllers.tacos.update);
+app.delete('/api/tacos/:tacoId', controllers.tacos.destroy);
 
 
 // app.get('/templates/:name', controllers.api.templates);

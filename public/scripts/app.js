@@ -31,4 +31,40 @@ angular
       console.log(res);
     });
 
+    vm.createTaco = function() {
+      $http({
+        method:"POST",
+        url: '/api/tacos',
+        data: vm.newTaco,
+      }).then(function successCallback(res){
+        vm.tacos.push(res.data);
+      }, function errorCallback(res){
+        console.log("ERROR", res);
+      });
+    };
+
+    vm.updateTaco = function(taco){
+      $http({
+        method: "PUT",
+        url: '/api/tacos/' + taco._id,
+        data: taco
+      }).then(function successCallback(res){
+        // vm.tacos.slice(vm.tacos.indexOf(taco),1, res.data);
+      }, function errorCallback(res){
+        console.log("ERROR: ",res);
+      });
+    };
+
+    vm.eatTaco = function(taco) {
+      $http({
+        method:'DELETE',
+        url: '/api/tacos/' + taco._id,
+      }).then(function successCallback(res){
+        var index = vm.tacos.indexOf(taco);
+        vm.tacos.splice(index,1);
+      }, function errorCallback(res){
+        console.log("ERROR: ", res);
+      });
+    };
+
   }

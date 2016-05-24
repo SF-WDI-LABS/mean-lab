@@ -24,7 +24,7 @@
           </p>
         </div>
         <div class="" ng-controller="TacosController as tacosCtrl">
-          <form ng-submit="tacosCtrl.submit()" class="">
+          <form ng-submit="tacosCtrl.createTaco()" class="">
             <input type="text" name="name" value="" ng-model="tacosCtrl.newTaco.meat">
             <input type="text" name="name" value="" ng-model="tacosCtrl.newTaco.tortilla">
             <input type="submit" name="name" value="Submit">
@@ -34,10 +34,18 @@
           </p>
           <hr>
           <div class="" ng-repeat="taco in tacosCtrl.tacos">
-            <p>
+            <p ng-hide="editing">
               {{taco.meat}}, {{taco.tortilla}}
             </p>
-            <button class="btn">hide</button>
+            <form ng-show="editing" ng-submit="tacosCtrl.updateTaco(taco); editing = false" class="">
+              <input type="text" name="name" value="" ng-model="taco.meat">
+              <input type="text" name="name" value="" ng-model="taco.tortilla">
+              <input type="submit" name="name" value="Submit">
+            </form>
+            <button ng-hide="editing" type="button" name="button" ng-click="editing = true">Edit</button>
+            <button ng-show="editing" type="button" name="button" ng-click="editing = false">Cancel</button>
+            <button class="btn btn-danger" type="button" name="button" ng-click="tacosCtrl.eatTaco(taco)">Delete</button>
+            <button class="btn btn-primary" type="button" name="button" ng-click="">View Taco</button>
           </div>
 
         </div>

@@ -35,9 +35,17 @@ function destroy(req, res){
   });
 }
 
+function show(req,res){
+  db.Taco.findById(req.params.tacoId, function(err, foundTaco){
+    if(err){console.log("ERROR: ",err);}
+    res.json(foundTaco);
+  });
+}
+
 module.exports = {
   index: index,
   create: create,
   update: update,
-  destroy: destroy
+  destroy: destroy,
+  show: show
 };

@@ -11,16 +11,26 @@ app.use(bodyParser.json());
 
 var ejs = require('ejs');
 app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');
 
 var controllers = require('./controllers');
+
+app.get('/', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+
 
 app.get('/api/tacos', controllers.tacos.index);
 app.post('/api/tacos', controllers.tacos.create);
 app.put('/api/tacos/:tacoId', controllers.tacos.update);
 app.delete('/api/tacos/:tacoId', controllers.tacos.destroy);
 
+app.get('/api/tacos/:tacoId', controllers.tacos.show);
 
-// app.get('/templates/:name', controllers.api.templates);
+
+
+app.get('/templates/:name', controllers.api.templates);
 
 
 app.get('*', function homepage (req, res) {

@@ -1,3 +1,4 @@
+console.log("in api ctrl");
 function index(req, res) {
   res.json({
     message: "Welcome to taco!",
@@ -8,6 +9,7 @@ function index(req, res) {
 }
 
 function templates(req, res) {
+  console.log("in template", req.params.name);
   var name = req.params.name;
   res.render('templates/' + name);
 }

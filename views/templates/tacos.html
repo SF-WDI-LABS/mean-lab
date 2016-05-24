@@ -1,0 +1,32 @@
+<div class="">
+  <h1>Welcome to Taco!</h1>
+  <p>
+    Here are some tacos!
+  </p>
+</div>
+<div class="" ng-controller="TacosController as tacosCtrl">
+  <form ng-submit="tacosCtrl.createTaco()" class="">
+    <input type="text" name="name" value="" ng-model="tacosCtrl.newTaco.meat">
+    <input type="text" name="name" value="" ng-model="tacosCtrl.newTaco.tortilla">
+    <input type="submit" name="name" value="Submit">
+  </form>
+  <p>
+    {{tacosCtrl.newTaco.meat}},{{tacosCtrl.newTaco.tortilla}}
+  </p>
+  <hr>
+  <div class="" ng-repeat="taco in tacosCtrl.tacos">
+    <p ng-hide="editing">
+      {{taco.meat}}, {{taco.tortilla}}
+    </p>
+    <form ng-show="editing" ng-submit="tacosCtrl.updateTaco(taco); editing = false" class="">
+      <input type="text" name="name" value="" ng-model="taco.meat">
+      <input type="text" name="name" value="" ng-model="taco.tortilla">
+      <input type="submit" name="name" value="Submit">
+    </form>
+    <button ng-hide="editing" type="button" name="button" ng-click="editing = true">Edit</button>
+    <button ng-show="editing" type="button" name="button" ng-click="editing = false">Cancel</button>
+    <button class="btn btn-danger" type="button" name="button" ng-click="tacosCtrl.eatTaco(taco)">Delete</button>
+    <a ng-href="{{taco._id}}"><button class="btn btn-primary" type="button" name="button">View Taco</button></a>
+  </div>
+
+</div>

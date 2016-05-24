@@ -1,1 +1,1 @@
-// module.exports.groceries = require('./groceriesController');
+module.exports.groceries = require('./groceriesController');

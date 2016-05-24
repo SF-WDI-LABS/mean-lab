@@ -6,3 +6,8 @@ var GrocerySchema = new Schema({
   type: String
 
 });
+
+
+var Grocery = mongoose.model('Grocery', GrocerySchema);
+
+module.exports = Grocery;

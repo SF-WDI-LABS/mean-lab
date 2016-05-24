@@ -43,17 +43,17 @@ app.get('/', function homepage (req, res) {
 
  // app.get('/api', controllers.api.index);
 
- app.get('/api/groceriesController', controllers.groceriesController.index);
- app.post('/api/groceriesController', controllers.groceriesController.create);
- app.delete('/api/groceriesController/:Id', controllers.groceriesController.destroy);
- app.put('/api/groceriesController/:Id', controllers.groceriesController.update);
+ // app.get('/api/groceriesController', controllers.groceriesController.index);
+ // app.post('/api/groceriesController', controllers.groceriesController.create);
+ // app.delete('/api/groceriesController/:Id', controllers.groceriesController.destroy);
+ // app.put('/api/groceriesController/:Id', controllers.groceriesController.update);
 
 
  /* set up a route to get the templates. Templates are
   * blocks of HTML that Angular will use to render each
   * "view" or page of your app.
   */
- app.get('/templates/:name', controllers.api.templates);
+ // app.get('/templates/:name', controllers.api.templates);
 
  // ALL OTHER ROUTES (ANGULAR HANDLES)
  // redirect all other paths to index

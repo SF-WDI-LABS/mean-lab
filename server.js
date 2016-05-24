@@ -43,7 +43,11 @@ app.get('/', function homepage (req, res) {
 
  // app.get('/api', controllers.api.index);
 
+<<<<<<< HEAD
  app.get('/groceries', controllers.groceries.index);
+=======
+ // app.get('/api/groceriesController', controllers.groceriesController.index);
+>>>>>>> b7a9d8e4be25b1884bd21fd316992fa9a98601c4
  // app.post('/api/groceriesController', controllers.groceriesController.create);
  // app.delete('/api/groceriesController/:Id', controllers.groceriesController.destroy);
  // app.put('/api/groceriesController/:Id', controllers.groceriesController.update);
@@ -53,7 +57,11 @@ app.get('/', function homepage (req, res) {
   * blocks of HTML that Angular will use to render each
   * "view" or page of your app.
   */
+<<<<<<< HEAD
  // app.get('/templates/:name', controllers.api.templates);
+=======
+ // app.get('/templates/:name', controllers.groceries.templates);
+>>>>>>> b7a9d8e4be25b1884bd21fd316992fa9a98601c4
 
  // ALL OTHER ROUTES (ANGULAR HANDLES)
  // redirect all other paths to index

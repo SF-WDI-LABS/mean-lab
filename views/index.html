@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="groceryList">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+    <script src="/styles/styles.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/core.js"></script>
+    <script src="/scripts/app.js"></script>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <form class="form-horizontal" ng-submit="groceriesIndexCtrl.createItem()">
+    <fieldset>
+      <legend>Add New Item</legend>
+        <input type="text" class="form-control" placeholder="Grocery Name" ng-model="groceryIndexCtrl.newGrocery.name">
+        <input type="text" class="form-control" placeholder="Grocery Type" ng-model="groceryIndexCtrl.newGrocery.type">
+
+
+        <div class="form-group">
+          <div class="col-lg-6">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+
+    <div class="col-lg-6">
+    <div class="container" ng-controller="GroceryIndexController as groceryIndexCtrl">
+      <p><b>groceryIndexCtrl.newGrocery:</b> {{groceryIndexCtrl.newGrocery}}</p>
+      <div ng-repeat="grocery in groceryIndexCtrl.groceries">
+        {{grocery}}
+      </div>
+    </div>
+
+
+  </body>
+</html>
